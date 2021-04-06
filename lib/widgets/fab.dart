@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polygon/flutter_polygon.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lms/widgets/clayContainerHighlight.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
 class ActionFab extends StatefulWidget {
@@ -76,45 +77,26 @@ class _ActionFabState extends State<ActionFab>
 
   Widget qrCodeScanner() {
     return Container(
-      child: GestureDetector(
+      child: InkWell(
         onTap: () async {
           print('qr');
           String cameraScanResult = await scanner.scan();
-          if (cameraScanResult != null) print(cameraScanResult);
+          print(cameraScanResult);
         },
-        child: ClayContainer(
-          color: Colors.white,
-          parentColor: Color(0xffF2F7FC),
-          depth: 2,
-          width: 40,
-          height: 40,
-          borderRadius: 15,
-          child: Icon(
-            CupertinoIcons.qrcode_viewfinder,
-            color: Colors.blueGrey,
-          ),
-        ),
+        child:
+            ClayContainerHighlight(iconData: CupertinoIcons.qrcode_viewfinder),
       ),
     );
   }
 
   Widget barCodeScanner() {
     return Container(
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
           print('bar');
         },
-        child: ClayContainer(
-          color: Colors.white,
-          parentColor: Color(0xffF2F7FC),
-          depth: 2,
-          width: 40,
-          height: 40,
-          borderRadius: 15,
-          child: Icon(
-            CupertinoIcons.barcode_viewfinder,
-            color: Colors.blueGrey,
-          ),
+        child: ClayContainerHighlight(
+          iconData: CupertinoIcons.barcode_viewfinder,
         ),
       ),
     );
@@ -122,33 +104,24 @@ class _ActionFabState extends State<ActionFab>
 
   Widget imageScanner() {
     return Container(
-      child: GestureDetector(
-        onTap: () async {
-          print('image');
-          final pickedFile = await picker.getImage(source: ImageSource.gallery);
-          File _image;
-          if (pickedFile != null) {
-            _image = File(pickedFile.path);
-            Uint8List bytes = _image.readAsBytesSync();
-            String barcode = await scanner.scanBytes(bytes);
-            print(barcode);
-          } else {
-            print('No image selected.');
-          }
-        },
-        child: ClayContainer(
-          color: Colors.white,
-          parentColor: Color(0xffF2F7FC),
-          depth: 2,
-          width: 40,
-          height: 40,
-          borderRadius: 15,
-          child: Icon(
-            CupertinoIcons.doc_text_viewfinder,
-            color: Colors.blueGrey,
-          ),
-        ),
-      ),
+      child: InkWell(
+          onTap: () async {
+            print('image');
+            final pickedFile =
+                await picker.getImage(source: ImageSource.gallery);
+            File _image;
+            if (pickedFile != null) {
+              _image = File(pickedFile.path);
+              Uint8List bytes = _image.readAsBytesSync();
+              String barcode = await scanner.scanBytes(bytes);
+              print(barcode);
+            } else {
+              print('No image selected.');
+            }
+          },
+          child: ClayContainerHighlight(
+            iconData: CupertinoIcons.doc_text_viewfinder,
+          )),
     );
   }
 
@@ -158,7 +131,7 @@ class _ActionFabState extends State<ActionFab>
       width: 80,
       child: FittedBox(
         child: FloatingActionButton(
-          elevation: 5,
+          elevation: 10,
           shape: PolygonBorder(
             // side: BorderSide(
             //     color: Colors.white,

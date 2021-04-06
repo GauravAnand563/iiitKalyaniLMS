@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lms/constants.dart';
 import 'package:lms/services/validation.dart';
 import 'package:lms/views/home.dart';
 import 'package:lms/widgets/choiceButtons.dart';
@@ -65,17 +66,12 @@ class _BodyLoginPageState extends State<BodyLoginPage> {
                 children: [
                   Text(
                     'Login',
-                    style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.w500,
-                        textStyle: TextStyle(fontSize: 25)),
+                    style: kPageTitleTextStyle,
                   ),
                   Spacer(flex: 1),
                   Text(
                     'Access account',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Colors.grey[400]),
+                    style: kPageSubtitleTextStyle,
                   ),
                   Spacer(
                     flex: 2,
@@ -109,10 +105,7 @@ class _BodyLoginPageState extends State<BodyLoginPage> {
                   ),
                   Text(
                     'or Login with Email',
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            color: Colors.blueGrey[400],
-                            fontWeight: FontWeight.w400)),
+                    style: kPageSecondaryTextStyle,
                   ),
                   Spacer(
                     flex: 1,
@@ -121,9 +114,7 @@ class _BodyLoginPageState extends State<BodyLoginPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Email',
-                        style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 16)),
+                        style: kPageHeading3TextStyle,
                       )),
                   Spacer(
                     flex: 1,
@@ -141,12 +132,7 @@ class _BodyLoginPageState extends State<BodyLoginPage> {
                   ),
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Password',
-                        style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 16)),
-                      )),
+                      child: Text('Password', style: kPageHeading3TextStyle)),
                   Spacer(
                     flex: 1,
                   ),
@@ -196,10 +182,7 @@ class _BodyLoginPageState extends State<BodyLoginPage> {
                       children: [
                         Text(
                           "Don't have an account?",
-                          style: GoogleFonts.montserrat(
-                              textStyle: TextStyle(
-                                  color: Colors.blueGrey[400],
-                                  fontWeight: FontWeight.w400)),
+                          style: kPageSecondaryTextStyle,
                         ),
                         Text(
                           " Register",

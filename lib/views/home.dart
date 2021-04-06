@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lms/models/tabs.dart';
 import 'package:lms/services/auth.dart';
 import 'package:lms/views/login.dart';
 import 'package:lms/widgets/fab.dart';
@@ -12,51 +14,98 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _isSignedOut = false;
   @override
   Widget build(BuildContext context) {
-    return ModalProgressHUD(
-      inAsyncCall: _isSignedOut,
-      dismissible: false,
-      child: SafeArea(
-          child: Scaffold(
-        floatingActionButton: ActionFab(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: Image.asset('assets/images/background.jpg').image,
-                colorFilter: new ColorFilter.mode(
-                    Colors.black.withOpacity(0.3), BlendMode.dstATop),
-                fit: BoxFit.cover),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
+    return SafeArea(
+        child: Scaffold(
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Column(
             children: [
-              Text("Hello World!"),
-              ElevatedButton(
-                  onPressed: () async {
-                    final _auth = Provider.of<Auth>(context, listen: false);
-                    setState(() {
-                      _isSignedOut = true;
-                    });
-                    var result = await _auth.signOut(context: context);
-                    setState(() {
-                      _isSignedOut = false;
-                    });
-                    if (result) {
-                      Navigator.popAndPushNamed(context, LoginPage.id);
-                    }
-                  },
-                  child: Text('Sign Out'))
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height - 100,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: Image.asset('assets/images/background.jpg').image,
+                      colorFilter: new ColorFilter.mode(
+                          Colors.black.withOpacity(0.3), BlendMode.dstATop),
+                      fit: BoxFit.cover),
+                ),
+                child: Provider.of<TabViews>(context).getTabView(),
+              ),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: Row(
+                    children: [
+                      BottomNavigationTabs(
+                        index: 0,
+                        iconData: CupertinoIcons.house_alt,
+                      ),
+                      BottomNavigationTabs(
+                        index: 1,
+                        iconData: CupertinoIcons.square_favorites_alt,
+                      ),
+                      Expanded(child: Container()),
+                      BottomNavigationTabs(
+                        index: 2,
+                        iconData: CupertinoIcons.cart,
+                      ),
+                      BottomNavigationTabs(
+                        index: 3,
+                        iconData: CupertinoIcons.person,
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
+          Container(
+            margin: EdgeInsets.only(bottom: 20),
+            child: ActionFab(),
+          )
+        ],
+      ),
+    ));
+  }
+}
+
+class BottomNavigationTabs extends StatefulWidget {
+  int index;
+  IconData iconData;
+  BottomNavigationTabs({Key? key, required this.index, required this.iconData})
+      : super(key: key);
+
+  @override
+  _BottomNavigationTabsState createState() => _BottomNavigationTabsState();
+}
+
+class _BottomNavigationTabsState extends State<BottomNavigationTabs> {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: InkWell(
+        onTap: () {
+          Provider.of<TabViews>(context, listen: false)
+              .setTabView(widget.index);
+        },
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Icon(
+            widget.iconData,
+            color:
+                Provider.of<TabViews>(context, listen: false).selectedIndex ==
+                        widget.index
+                    ? Colors.green
+                    : Colors.blueGrey,
+          ),
         ),
-      )),
+      ),
     );
   }
 }

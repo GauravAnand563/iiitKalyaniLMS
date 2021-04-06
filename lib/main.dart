@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
+import 'package:lms/models/tabs.dart';
 import 'package:lms/services/auth.dart';
 import 'package:lms/views/home.dart';
 import 'package:lms/views/login.dart';
@@ -55,6 +56,9 @@ class MyApp extends StatelessWidget {
         Provider<Auth>(
           create: (context) => _auth,
         ),
+        ChangeNotifierProvider<TabViews>(
+          create: (context) => TabViews(),
+        )
         // StreamProvider<CustomUser?>.value(
         //   value: _auth.authStateChanges,
         //   initialData: CustomUser(

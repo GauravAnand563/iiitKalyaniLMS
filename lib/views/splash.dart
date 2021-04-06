@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   // CustomUser? _user;
   Future<void> navigate() async {
     final _user = FirebaseAuth.instance.currentUser;
-    return Future.delayed(Duration(seconds: 2), () {
+    return Future.delayed(Duration(seconds: 1), () {
       if (_user == null)
         Navigator.popAndPushNamed(context, LoginPage.id);
       else
