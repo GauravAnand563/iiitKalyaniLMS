@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">386183886610-aoph5srd6q6l5c0qck7mg5f8p5lm6jfj.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">386183886610</string>
+    <string name="google_api_key" translatable="false">AIzaSyCU7LYE2jiaFLNubzVHHFSZy0OLzjQsa48</string>
+    <string name="google_app_id" translatable="false">1:386183886610:android:46df08d84c4c9ded52a5cb</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCU7LYE2jiaFLNubzVHHFSZy0OLzjQsa48</string>
+    <string name="google_storage_bucket" translatable="false">iiitkalyani-lms.appspot.com</string>
+    <string name="project_id" translatable="false">iiitkalyani-lms</string>
+</resources>

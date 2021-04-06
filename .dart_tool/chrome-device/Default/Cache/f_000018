@@ -1,0 +1,316 @@
+define(['dart_sdk', 'packages/plugin_platform_interface/plugin_platform_interface.dart', 'packages/cloud_functions_platform_interface/src/https_callable_options.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/cloud_functions_platform_interface/src/firebase_functions_exception.dart', 'packages/firebase_core/firebase_core.dart'], (function load__packages__cloud_functions_platform_interface__src__platform_interface__platform_interface_https_callable_dart(dart_sdk, packages__plugin_platform_interface__plugin_platform_interface$46dart, packages__cloud_functions_platform_interface__src__https_callable_options$46dart, packages__flutter__src__services__system_channels$46dart, packages__cloud_functions_platform_interface__src__firebase_functions_exception$46dart, packages__firebase_core__firebase_core$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const plugin_platform_interface = packages__plugin_platform_interface__plugin_platform_interface$46dart.plugin_platform_interface;
+  const https_callable_options = packages__cloud_functions_platform_interface__src__https_callable_options$46dart.src__https_callable_options;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const firebase_functions_exception = packages__cloud_functions_platform_interface__src__firebase_functions_exception$46dart.src__firebase_functions_exception;
+  const firebase_core = packages__firebase_core__firebase_core$46dart.firebase_core;
+  var platform_interface_https_callable = Object.create(dart.library);
+  var exception$ = Object.create(dart.library);
+  var method_channel_https_callable = Object.create(dart.library);
+  var method_channel_firebase_functions = Object.create(dart.library);
+  var platform_interface_firebase_functions = Object.create(dart.library);
+  var cloud_functions_platform_interface = Object.create(dart.library);
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    LinkedHashMapOfString$dynamic: () => (T.LinkedHashMapOfString$dynamic = dart.constFn(collection.LinkedHashMap$(core.String, dart.dynamic)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    FutureOrOfMapOfString$dynamic: () => (T.FutureOrOfMapOfString$dynamic = dart.constFn(async.FutureOr$(T.MapOfString$dynamic())))(),
+    StackTraceN: () => (T.StackTraceN = dart.constFn(dart.nullable(core.StackTrace)))(),
+    ObjectAndStackTraceNToFutureOrOfMapOfString$dynamic: () => (T.ObjectAndStackTraceNToFutureOrOfMapOfString$dynamic = dart.constFn(dart.fnType(T.FutureOrOfMapOfString$dynamic(), [core.Object], [T.StackTraceN()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.fn(exception$.catchPlatformException, T.ObjectAndStackTraceNToFutureOrOfMapOfString$dynamic());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[3] || CT.C3
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[2] || CT.C2,
+        [MethodChannel_name]: "plugins.flutter.io/firebase_functions"
+      });
+    }
+  }, false);
+  var C = Array(4).fill(void 0);
+  var I = [
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions_platform_interface-5.0.0/lib/src/platform_interface/platform_interface_https_callable.dart",
+    "package:cloud_functions_platform_interface/src/platform_interface/platform_interface_https_callable.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions_platform_interface-5.0.0/lib/src/method_channel/utils/exception.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions_platform_interface-5.0.0/lib/src/method_channel/method_channel_https_callable.dart",
+    "package:cloud_functions_platform_interface/src/method_channel/method_channel_https_callable.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions_platform_interface-5.0.0/lib/src/method_channel/method_channel_firebase_functions.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_functions_platform_interface-5.0.0/lib/src/platform_interface/platform_interface_firebase_functions.dart",
+    "package:cloud_functions_platform_interface/src/platform_interface/platform_interface_firebase_functions.dart",
+    "package:cloud_functions_platform_interface/src/method_channel/method_channel_firebase_functions.dart"
+  ];
+  var functions$ = dart.privateName(platform_interface_https_callable, "HttpsCallablePlatform.functions");
+  var origin$ = dart.privateName(platform_interface_https_callable, "HttpsCallablePlatform.origin");
+  var name$ = dart.privateName(platform_interface_https_callable, "HttpsCallablePlatform.name");
+  var options$ = dart.privateName(platform_interface_https_callable, "HttpsCallablePlatform.options");
+  platform_interface_https_callable.HttpsCallablePlatform = class HttpsCallablePlatform extends plugin_platform_interface.PlatformInterface {
+    get functions() {
+      return this[functions$];
+    }
+    set functions(value) {
+      super.functions = value;
+    }
+    get origin() {
+      return this[origin$];
+    }
+    set origin(value) {
+      super.origin = value;
+    }
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get options() {
+      return this[options$];
+    }
+    set options(value) {
+      this[options$] = value;
+    }
+    static verifyExtends(instance) {
+      if (instance == null) dart.nullFailed(I[0], 26, 51, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_https_callable.HttpsCallablePlatform._token);
+    }
+    call(parameters = null) {
+      dart.throw(new core.UnimplementedError.new("call() is not implemented"));
+    }
+  };
+  (platform_interface_https_callable.HttpsCallablePlatform.new = function(functions, origin, name, options) {
+    if (functions == null) dart.nullFailed(I[0], 15, 30, "functions");
+    if (name == null) dart.nullFailed(I[0], 15, 59, "name");
+    if (options == null) dart.nullFailed(I[0], 15, 70, "options");
+    this[functions$] = functions;
+    this[origin$] = origin;
+    this[name$] = name;
+    this[options$] = options;
+    platform_interface_https_callable.HttpsCallablePlatform.__proto__.new.call(this, {token: platform_interface_https_callable.HttpsCallablePlatform._token});
+    ;
+  }).prototype = platform_interface_https_callable.HttpsCallablePlatform.prototype;
+  dart.addTypeTests(platform_interface_https_callable.HttpsCallablePlatform);
+  dart.addTypeCaches(platform_interface_https_callable.HttpsCallablePlatform);
+  dart.setMethodSignature(platform_interface_https_callable.HttpsCallablePlatform, () => ({
+    __proto__: dart.getMethods(platform_interface_https_callable.HttpsCallablePlatform.__proto__),
+    call: dart.fnType(async.Future, [], [dart.dynamic])
+  }));
+  dart.setLibraryUri(platform_interface_https_callable.HttpsCallablePlatform, I[1]);
+  dart.setFieldSignature(platform_interface_https_callable.HttpsCallablePlatform, () => ({
+    __proto__: dart.getFields(platform_interface_https_callable.HttpsCallablePlatform.__proto__),
+    functions: dart.finalFieldType(platform_interface_firebase_functions.FirebaseFunctionsPlatform),
+    origin: dart.finalFieldType(dart.nullable(core.String)),
+    name: dart.finalFieldType(core.String),
+    options: dart.fieldType(https_callable_options.HttpsCallableOptions)
+  }));
+  dart.defineLazy(platform_interface_https_callable.HttpsCallablePlatform, {
+    /*platform_interface_https_callable.HttpsCallablePlatform._token*/get _token() {
+      return new core.Object.new();
+    }
+  }, false);
+  exception$.catchPlatformException = function catchPlatformException(exception, stackTrace = null) {
+    if (exception == null) dart.nullFailed(I[2], 13, 62, "exception");
+    return async.async(T.MapOfString$dynamic(), function* catchPlatformException() {
+      if (!core.Exception.is(exception) || !message_codec.PlatformException.is(exception)) {
+        dart.throw(exception);
+      }
+      dart.throw(exception$.platformExceptionToFirebaseFunctionsException(exception, stackTrace));
+    });
+  };
+  exception$.platformExceptionToFirebaseFunctionsException = function platformExceptionToFirebaseFunctionsException(platformException, stackTrace = null) {
+    let t0, t0$;
+    if (platformException == null) dart.nullFailed(I[2], 30, 23, "platformException");
+    let details = platformException.details != null ? T.LinkedHashMapOfString$dynamic().from(core.Map.as(platformException.details)) : null;
+    let additionalData = details != null ? details[$_get]("additionalData") : null;
+    let code = "unknown";
+    let message = platformException.message;
+    if (details != null) {
+      code = core.String.as((t0 = details[$_get]("code"), t0 == null ? code : t0));
+      message = T.StringN().as((t0$ = details[$_get]("message"), t0$ == null ? message : t0$));
+    }
+    return new firebase_functions_exception.FirebaseFunctionsException.new({code: code, message: dart.nullCheck(message), details: additionalData});
+  };
+  method_channel_https_callable.MethodChannelHttpsCallable = class MethodChannelHttpsCallable extends platform_interface_https_callable.HttpsCallablePlatform {
+    call(parameters = null) {
+      return method_channel_firebase_functions.MethodChannelFirebaseFunctions.channel.invokeMethod(dart.dynamic, "FirebaseFunctions#call", new (T.IdentityMapOfString$dynamic()).from(["appName", dart.nullCheck(this.functions.app).name, "functionName", this.name, "origin", this.origin, "region", this.functions.region, "timeout", this.options.timeout.inMilliseconds, "parameters", parameters])).catchError(C[0] || CT.C0);
+    }
+  };
+  (method_channel_https_callable.MethodChannelHttpsCallable.new = function(functions, origin, name, options) {
+    if (functions == null) dart.nullFailed(I[3], 15, 56, "functions");
+    if (name == null) dart.nullFailed(I[3], 16, 30, "name");
+    if (options == null) dart.nullFailed(I[3], 16, 57, "options");
+    method_channel_https_callable.MethodChannelHttpsCallable.__proto__.new.call(this, functions, origin, name, options);
+    ;
+  }).prototype = method_channel_https_callable.MethodChannelHttpsCallable.prototype;
+  dart.addTypeTests(method_channel_https_callable.MethodChannelHttpsCallable);
+  dart.addTypeCaches(method_channel_https_callable.MethodChannelHttpsCallable);
+  dart.setLibraryUri(method_channel_https_callable.MethodChannelHttpsCallable, I[4]);
+  var app$ = dart.privateName(platform_interface_firebase_functions, "FirebaseFunctionsPlatform.app");
+  var region$ = dart.privateName(platform_interface_firebase_functions, "FirebaseFunctionsPlatform.region");
+  platform_interface_firebase_functions.FirebaseFunctionsPlatform = class FirebaseFunctionsPlatform extends plugin_platform_interface.PlatformInterface {
+    get app() {
+      return this[app$];
+    }
+    set app(value) {
+      super.app = value;
+    }
+    get region() {
+      return this[region$];
+    }
+    set region(value) {
+      super.region = value;
+    }
+    static instanceFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      let region = opts && 'region' in opts ? opts.region : null;
+      if (region == null) dart.nullFailed(I[6], 26, 42, "region");
+      return platform_interface_firebase_functions.FirebaseFunctionsPlatform.instance.delegateFor({app: app, region: region});
+    }
+    static get instance() {
+      let t0;
+      t0 = platform_interface_firebase_functions.FirebaseFunctionsPlatform._instance;
+      return t0 == null ? platform_interface_firebase_functions.FirebaseFunctionsPlatform._instance = method_channel_firebase_functions.MethodChannelFirebaseFunctions.instance : t0;
+    }
+    static set instance(instance) {
+      if (instance == null) dart.nullFailed(I[6], 50, 49, "instance");
+      plugin_platform_interface.PlatformInterface.verifyToken(instance, platform_interface_firebase_functions.FirebaseFunctionsPlatform._token);
+      platform_interface_firebase_functions.FirebaseFunctionsPlatform._instance = instance;
+    }
+    delegateFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      let region = opts && 'region' in opts ? opts.region : null;
+      if (region == null) dart.nullFailed(I[6], 59, 42, "region");
+      dart.throw(new core.UnimplementedError.new("delegateFor() is not implemented"));
+    }
+    httpsCallable(origin, name, options) {
+      if (name == null) dart.nullFailed(I[6], 65, 30, "name");
+      if (options == null) dart.nullFailed(I[6], 65, 57, "options");
+      dart.throw(new core.UnimplementedError.new("httpsCallable() is not implemented"));
+    }
+  };
+  (platform_interface_firebase_functions.FirebaseFunctionsPlatform.new = function(app, region) {
+    if (region == null) dart.nullFailed(I[6], 22, 44, "region");
+    this[app$] = app;
+    this[region$] = region;
+    platform_interface_firebase_functions.FirebaseFunctionsPlatform.__proto__.new.call(this, {token: platform_interface_firebase_functions.FirebaseFunctionsPlatform._token});
+    ;
+  }).prototype = platform_interface_firebase_functions.FirebaseFunctionsPlatform.prototype;
+  dart.addTypeTests(platform_interface_firebase_functions.FirebaseFunctionsPlatform);
+  dart.addTypeCaches(platform_interface_firebase_functions.FirebaseFunctionsPlatform);
+  dart.setMethodSignature(platform_interface_firebase_functions.FirebaseFunctionsPlatform, () => ({
+    __proto__: dart.getMethods(platform_interface_firebase_functions.FirebaseFunctionsPlatform.__proto__),
+    delegateFor: dart.fnType(platform_interface_firebase_functions.FirebaseFunctionsPlatform, [], {app: dart.nullable(firebase_core.FirebaseApp)}, {region: core.String}),
+    httpsCallable: dart.fnType(platform_interface_https_callable.HttpsCallablePlatform, [dart.nullable(core.String), core.String, https_callable_options.HttpsCallableOptions])
+  }));
+  dart.setLibraryUri(platform_interface_firebase_functions.FirebaseFunctionsPlatform, I[7]);
+  dart.setFieldSignature(platform_interface_firebase_functions.FirebaseFunctionsPlatform, () => ({
+    __proto__: dart.getFields(platform_interface_firebase_functions.FirebaseFunctionsPlatform.__proto__),
+    app: dart.finalFieldType(dart.nullable(firebase_core.FirebaseApp)),
+    region: dart.finalFieldType(core.String)
+  }));
+  dart.defineLazy(platform_interface_firebase_functions.FirebaseFunctionsPlatform, {
+    /*platform_interface_firebase_functions.FirebaseFunctionsPlatform._token*/get _token() {
+      return new core.Object.new();
+    },
+    /*platform_interface_firebase_functions.FirebaseFunctionsPlatform._instance*/get _instance() {
+      return null;
+    },
+    set _instance(_) {}
+  }, false);
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  method_channel_firebase_functions.MethodChannelFirebaseFunctions = class MethodChannelFirebaseFunctions extends platform_interface_firebase_functions.FirebaseFunctionsPlatform {
+    static get instance() {
+      return new method_channel_firebase_functions.MethodChannelFirebaseFunctions.__();
+    }
+    delegateFor(opts) {
+      let app = opts && 'app' in opts ? opts.app : null;
+      let region = opts && 'region' in opts ? opts.region : null;
+      if (region == null) dart.nullFailed(I[5], 37, 42, "region");
+      return new method_channel_firebase_functions.MethodChannelFirebaseFunctions.new({app: app, region: region});
+    }
+    httpsCallable(origin, name, options) {
+      if (name == null) dart.nullFailed(I[5], 43, 30, "name");
+      if (options == null) dart.nullFailed(I[5], 43, 57, "options");
+      return new method_channel_https_callable.MethodChannelHttpsCallable.new(this, origin, name, options);
+    }
+  };
+  (method_channel_firebase_functions.MethodChannelFirebaseFunctions.new = function(opts) {
+    let app = opts && 'app' in opts ? opts.app : null;
+    let region = opts && 'region' in opts ? opts.region : null;
+    if (region == null) dart.nullFailed(I[5], 15, 69, "region");
+    method_channel_firebase_functions.MethodChannelFirebaseFunctions.__proto__.new.call(this, app, region);
+    ;
+  }).prototype = method_channel_firebase_functions.MethodChannelFirebaseFunctions.prototype;
+  (method_channel_firebase_functions.MethodChannelFirebaseFunctions.__ = function() {
+    method_channel_firebase_functions.MethodChannelFirebaseFunctions.__proto__.new.call(this, null, "us-central1");
+    ;
+  }).prototype = method_channel_firebase_functions.MethodChannelFirebaseFunctions.prototype;
+  dart.addTypeTests(method_channel_firebase_functions.MethodChannelFirebaseFunctions);
+  dart.addTypeCaches(method_channel_firebase_functions.MethodChannelFirebaseFunctions);
+  dart.setLibraryUri(method_channel_firebase_functions.MethodChannelFirebaseFunctions, I[8]);
+  dart.defineLazy(method_channel_firebase_functions.MethodChannelFirebaseFunctions, {
+    /*method_channel_firebase_functions.MethodChannelFirebaseFunctions.channel*/get channel() {
+      return C[1] || CT.C1;
+    }
+  }, false);
+  dart.trackLibraries("packages/cloud_functions_platform_interface/src/platform_interface/platform_interface_https_callable.dart", {
+    "package:cloud_functions_platform_interface/src/platform_interface/platform_interface_https_callable.dart": platform_interface_https_callable,
+    "package:cloud_functions_platform_interface/src/method_channel/utils/exception.dart": exception$,
+    "package:cloud_functions_platform_interface/src/method_channel/method_channel_https_callable.dart": method_channel_https_callable,
+    "package:cloud_functions_platform_interface/src/method_channel/method_channel_firebase_functions.dart": method_channel_firebase_functions,
+    "package:cloud_functions_platform_interface/src/platform_interface/platform_interface_firebase_functions.dart": platform_interface_firebase_functions,
+    "package:cloud_functions_platform_interface/cloud_functions_platform_interface.dart": cloud_functions_platform_interface
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["platform_interface_https_callable.dart","../method_channel/utils/exception.dart","../method_channel/method_channel_https_callable.dart","platform_interface_firebase_functions.dart","../method_channel/method_channel_firebase_functions.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA8BkC;;;;;;IAGlB;;;;;;IAGD;;;;;;IAGQ;;;;;;;UAd2B;AACC,MAA7B,wDAAY,QAAQ,EAAE;IAC1C;SA4B8B;AACyB,MAArD,WAAM,gCAAmB;IAC3B;;0EA3C2B,WAAgB,QAAa,MAAW;QAAxC;QAA6B;QAAW;IAAxC;IAAgB;IAAa;IAAW;AAC7D,6FAAa;;EAAO;;;;;;;;;;;;;;;;MAEN,8DAAM;YAAG;;;sECL8B,WAC5C;QAD4C;AAAR;AAEnD,WAAc,kBAAV,SAAS,MAA4B,mCAAV,SAAS;AAGvB,QAAf,WAAM,SAAS;;AAGyD,MAA1E,WAAM,yDAA8C,SAAS,EAAE,UAAU;IAC3E;;oHAQsB,mBACL;;QADK;AAEE,kBAAU,AAAkB,AAAQ,iBAAT,mBAC3C,mDAA0B,AAAkB,iBAAD,aAC3C;AACE,yBAAiB,AAAQ,OAAD,WAAW,AAAO,OAAA,QAAC,oBAAoB;AAEhE,eAAO;AACN,kBAAU,AAAkB,iBAAD;AAEnC,QAAI,AAAQ,OAAD;AACqB,aAA9B,gBAAuB,KAAhB,AAAO,OAAA,QAAC,SAAD,aAAY,IAAI;AACS,gBAAvC,gBAA6B,MAAnB,AAAO,OAAA,QAAC,YAAD,cAAe,OAAO;;AAGzC,UAAO,wEACG,IAAI,WAAkB,eAAP,OAAO,YAAY,cAAc;EAC5D;;SC3BgC;AAC5B,YAAsC,AACjC,AAOF,qGAPe,0BAA2C,4CAC3D,WAAwB,AAAE,eAAf,AAAU,0BACrB,gBAAgB,WAChB,UAAU,aACV,UAAU,AAAU,uBACpB,WAAW,AAAQ,AAAQ,qCAC3B,cAAc,UAAU;IAE5B;;2EAfqD,WACzC,QAAe,MAA2B;QADD;QAC1B;QAA2B;AAChD,sFAAM,SAAS,EAAE,MAAM,EAAE,IAAI,EAAE,OAAO;;EAAC;;;;;;;ICmB1B;;;;;;IAGN;;;;;;;UAbK;UAAqB;;AACrC,YAAiC,AAC5B,4FAAiB,GAAG,UAAU,MAAM;IAC3C;;;AAiBE,WAAO;0BAAU,4EAAmC;IACtD;;UAG8C;AACG,MAA7B,wDAAY,QAAQ,EAAE;AACpB,MAApB,4EAAY,QAAQ;IACtB;;UAMkB;UAAqB;;AACuB,MAA5D,WAAM,gCAAmB;IAC3B;kBAIY,QAAe,MAA2B;UAA3B;UAA2B;AACU,MAA9D,WAAM,gCAAmB;IAC3B;;kFA7C+B;QAAU;IAAV;IAAU;AAAU,qGAAa;;EAAO;;;;;;;;;;;;;;;MASnD,sEAAM;YAAG;;MAEK,yEAAS;;;;;;;;;;;ACNzC,YAAsC;IACxC;;UASkB;UAAqB;;AACrC,YAAO,gFAAoC,GAAG,UAAU,MAAM;IAChE;kBAIY,QAAe,MAA2B;UAA3B;UAA2B;AACpD,YAAO,kEAA2B,MAAM,MAAM,EAAE,IAAI,EAAE,OAAO;IAC/D;;;QA9B6C;QAAqB;;AAC5D,8FAAM,GAAG,EAAE,MAAM;;EAAC;;AAMa,8FAAM,MAAM;;EAAc;;;;;MASpC,wEAAO","file":"../../../../../../../../../../D:/packages/cloud_functions_platform_interface/src/platform_interface/platform_interface_https_callable.dart.lib.js"}');
+  // Exports:
+  return {
+    src__platform_interface__platform_interface_https_callable: platform_interface_https_callable,
+    src__method_channel__utils__exception: exception$,
+    src__method_channel__method_channel_https_callable: method_channel_https_callable,
+    src__method_channel__method_channel_firebase_functions: method_channel_firebase_functions,
+    src__platform_interface__platform_interface_firebase_functions: platform_interface_firebase_functions,
+    cloud_functions_platform_interface: cloud_functions_platform_interface
+  };
+}));
+
+//# sourceMappingURL=platform_interface_https_callable.dart.lib.js.map

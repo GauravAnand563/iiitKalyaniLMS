@@ -1,0 +1,442 @@
+define(['dart_sdk', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__modal_progress_hud_nsn__modal_progress_hud_nsn_dart(dart_sdk, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__flutter__src__widgets__widget_span$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const colors$ = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const modal_barrier = packages__flutter__src__widgets__widget_span$46dart.src__widgets__modal_barrier;
+  var modal_progress_hud_nsn = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294638330.0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294309365.0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293848814.0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292927712.0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292269782.0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290624957.0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288585374.0
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285887861.0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284572001.0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282532418.0
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281348144.0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280361249.0
+      });
+    },
+    get C1() {
+      return C[1] = dart.constMap(core.int, ui.Color, [50, C[2] || CT.C2, 100, C[3] || CT.C3, 200, C[4] || CT.C4, 300, C[5] || CT.C5, 350, C[6] || CT.C6, 400, C[7] || CT.C7, 500, C[8] || CT.C8, 600, C[9] || CT.C9, 700, C[10] || CT.C10, 800, C[11] || CT.C11, 850, C[12] || CT.C12, 900, C[13] || CT.C13]);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4288585374.0,
+        [ColorSwatch__swatch]: C[1] || CT.C1
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([], widget_inspector._Location);
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: progress_indicator._ActivityIndicatorType.prototype,
+        [_name]: "_ActivityIndicatorType.material",
+        index: 0
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: progress_indicator.CircularProgressIndicator.prototype,
+        [Widget__location]: C[15] || CT.C15,
+        [Widget_key]: null,
+        [ProgressIndicator_semanticsValue]: null,
+        [ProgressIndicator_semanticsLabel]: null,
+        [ProgressIndicator_valueColor]: null,
+        [ProgressIndicator_backgroundColor]: null,
+        [ProgressIndicator_value]: null,
+        [CircularProgressIndicator_strokeWidth]: 4,
+        [CircularProgressIndicator__indicatorType]: C[17] || CT.C17
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 40,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 51,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "left",
+        [_Location_column]: 9,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "top",
+        [_Location_column]: 9,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], widget_inspector._Location);
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dismissible",
+        [_Location_column]: 35,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 61,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29], widget_inspector._Location);
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 64,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart"
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 11,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.constList([C[32] || CT.C32, C[33] || CT.C33], widget_inspector._Location);
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[31] || CT.C31,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 63,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 60,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart"
+      });
+    }
+  }, false);
+  var C = Array(37).fill(void 0);
+  var I = [
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/modal_progress_hud_nsn-0.1.0-nullsafety-1/lib/modal_progress_hud_nsn.dart",
+    "package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart"
+  ];
+  var inAsyncCall$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.inAsyncCall");
+  var opacity$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.opacity");
+  var color$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.color");
+  var progressIndicator$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.progressIndicator");
+  var offset$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.offset");
+  var dismissible$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.dismissible");
+  var child$ = dart.privateName(modal_progress_hud_nsn, "ModalProgressHUD.child");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var ColorSwatch__swatch = dart.privateName(colors$, "ColorSwatch._swatch");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var ProgressIndicator_semanticsValue = dart.privateName(progress_indicator, "ProgressIndicator.semanticsValue");
+  var ProgressIndicator_semanticsLabel = dart.privateName(progress_indicator, "ProgressIndicator.semanticsLabel");
+  var ProgressIndicator_valueColor = dart.privateName(progress_indicator, "ProgressIndicator.valueColor");
+  var ProgressIndicator_backgroundColor = dart.privateName(progress_indicator, "ProgressIndicator.backgroundColor");
+  var ProgressIndicator_value = dart.privateName(progress_indicator, "ProgressIndicator.value");
+  var CircularProgressIndicator_strokeWidth = dart.privateName(progress_indicator, "CircularProgressIndicator.strokeWidth");
+  var _name = dart.privateName(progress_indicator, "_name");
+  var CircularProgressIndicator__indicatorType = dart.privateName(progress_indicator, "CircularProgressIndicator._indicatorType");
+  modal_progress_hud_nsn.ModalProgressHUD = class ModalProgressHUD extends framework.StatelessWidget {
+    get inAsyncCall() {
+      return this[inAsyncCall$];
+    }
+    set inAsyncCall(value) {
+      super.inAsyncCall = value;
+    }
+    get opacity() {
+      return this[opacity$];
+    }
+    set opacity(value) {
+      super.opacity = value;
+    }
+    get color() {
+      return this[color$];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get progressIndicator() {
+      return this[progressIndicator$];
+    }
+    set progressIndicator(value) {
+      super.progressIndicator = value;
+    }
+    get offset() {
+      return this[offset$];
+    }
+    set offset(value) {
+      super.offset = value;
+    }
+    get dismissible() {
+      return this[dismissible$];
+    }
+    set dismissible(value) {
+      super.dismissible = value;
+    }
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 46, 29, "context");
+      if (!dart.test(this.inAsyncCall)) return this.child;
+      let layOutProgressIndicator = null;
+      if (this.offset == null)
+        layOutProgressIndicator = new basic.Center.new({child: this.progressIndicator, $creationLocationd_0dea112b090073317d4: C[18] || CT.C18});
+      else {
+        layOutProgressIndicator = new basic.Positioned.new({child: this.progressIndicator, left: dart.nullCheck(this.offset).dx, top: dart.nullCheck(this.offset).dy, $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
+      }
+      return new basic.Stack.new({children: T.JSArrayOfWidget().of([this.child, new basic.Opacity.new({child: new modal_barrier.ModalBarrier.new({dismissible: this.dismissible, color: this.color, $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), opacity: this.opacity, $creationLocationd_0dea112b090073317d4: C[30] || CT.C30}), layOutProgressIndicator]), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34});
+    }
+  };
+  (modal_progress_hud_nsn.ModalProgressHUD.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let inAsyncCall = opts && 'inAsyncCall' in opts ? opts.inAsyncCall : null;
+    if (inAsyncCall == null) dart.nullFailed(I[0], 36, 19, "inAsyncCall");
+    let opacity = opts && 'opacity' in opts ? opts.opacity : 0.3;
+    if (opacity == null) dart.nullFailed(I[0], 37, 10, "opacity");
+    let color = opts && 'color' in opts ? opts.color : C[0] || CT.C0;
+    if (color == null) dart.nullFailed(I[0], 38, 10, "color");
+    let progressIndicator = opts && 'progressIndicator' in opts ? opts.progressIndicator : C[14] || CT.C14;
+    if (progressIndicator == null) dart.nullFailed(I[0], 39, 10, "progressIndicator");
+    let offset = opts && 'offset' in opts ? opts.offset : null;
+    let dismissible = opts && 'dismissible' in opts ? opts.dismissible : false;
+    if (dismissible == null) dart.nullFailed(I[0], 41, 10, "dismissible");
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 42, 19, "child");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[inAsyncCall$] = inAsyncCall;
+    this[opacity$] = opacity;
+    this[color$] = color;
+    this[progressIndicator$] = progressIndicator;
+    this[offset$] = offset;
+    this[dismissible$] = dismissible;
+    this[child$] = child;
+    modal_progress_hud_nsn.ModalProgressHUD.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = modal_progress_hud_nsn.ModalProgressHUD.prototype;
+  dart.addTypeTests(modal_progress_hud_nsn.ModalProgressHUD);
+  dart.addTypeCaches(modal_progress_hud_nsn.ModalProgressHUD);
+  dart.setMethodSignature(modal_progress_hud_nsn.ModalProgressHUD, () => ({
+    __proto__: dart.getMethods(modal_progress_hud_nsn.ModalProgressHUD.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(modal_progress_hud_nsn.ModalProgressHUD, I[1]);
+  dart.setFieldSignature(modal_progress_hud_nsn.ModalProgressHUD, () => ({
+    __proto__: dart.getFields(modal_progress_hud_nsn.ModalProgressHUD.__proto__),
+    inAsyncCall: dart.finalFieldType(core.bool),
+    opacity: dart.finalFieldType(core.double),
+    color: dart.finalFieldType(ui.Color),
+    progressIndicator: dart.finalFieldType(framework.Widget),
+    offset: dart.finalFieldType(dart.nullable(ui.Offset)),
+    dismissible: dart.finalFieldType(core.bool),
+    child: dart.finalFieldType(framework.Widget)
+  }));
+  dart.trackLibraries("packages/modal_progress_hud_nsn/modal_progress_hud_nsn.dart", {
+    "package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart": modal_progress_hud_nsn
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["modal_progress_hud_nsn.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAyBa;;;;;;IACE;;;;;;IACD;;;;;;IACC;;;;;;IACC;;;;;;IACH;;;;;;IACE;;;;;;;UAca;AACxB,qBAAK,mBAAa,MAAO;AAElB;AACP,UAAI,AAAO;AACiD,QAA1D,0BAA0B,6BAAc;;AAMvC,QAJD,0BAA0B,iCACjB,8BACK,AAAE,eAAR,sBACK,AAAE,eAAR;;AAIT,YAAW,gCACC,wBACR,YACI,8BACS,iDAA0B,yBAAoB,gFAChD,yEAEX,uBAAuB;IAG7B;;;QAnCO;QACS;;QACT;;QACA;;QACA;;QACA;QACA;;QACS;;;IANA;IACT;IACA;IACA;IACA;IACA;IACS;AACX,2EAAW,GAAG;;EAAC","file":"../../../../../../../../D:/packages/modal_progress_hud_nsn/modal_progress_hud_nsn.dart.lib.js"}');
+  // Exports:
+  return {
+    modal_progress_hud_nsn: modal_progress_hud_nsn
+  };
+}));
+
+//# sourceMappingURL=modal_progress_hud_nsn.dart.lib.js.map
