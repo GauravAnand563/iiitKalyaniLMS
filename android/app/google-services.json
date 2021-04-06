@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "386183886610",
+    "project_id": "iiitkalyani-lms",
+    "storage_bucket": "iiitkalyani-lms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386183886610:android:46df08d84c4c9ded52a5cb",
+        "android_client_info": {
+          "package_name": "com.example.lms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386183886610-tmqou8rgc74p3bji1mg0tjc916i51vdr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lms",
+            "certificate_hash": "01aba792986695323097526e48cd0a1ce945959d"
+          }
+        },
+        {
+          "client_id": "386183886610-aoph5srd6q6l5c0qck7mg5f8p5lm6jfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU7LYE2jiaFLNubzVHHFSZy0OLzjQsa48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386183886610-aoph5srd6q6l5c0qck7mg5f8p5lm6jfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
