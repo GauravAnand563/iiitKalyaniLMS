@@ -6,9 +6,12 @@ import 'package:lms/models/tabs.dart';
 import 'package:lms/services/auth.dart';
 import 'package:lms/views/home.dart';
 import 'package:lms/views/login.dart';
+import 'package:lms/views/profile.dart';
 import 'package:lms/views/register.dart';
 import 'package:lms/views/splash.dart';
 import 'package:provider/provider.dart';
+import 'package:lms/models/user.dart';
+import 'services/search.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,7 +61,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<TabViews>(
           create: (context) => TabViews(),
-        )
+        ),
+        ChangeNotifierProvider<Search>(create: (context) => Search()),
+        ChangeNotifierProvider<LMSUser>(create: (context) => LMSUser())
         // StreamProvider<CustomUser?>.value(
         //   value: _auth.authStateChanges,
         //   initialData: CustomUser(
@@ -75,6 +80,7 @@ class MyApp extends StatelessWidget {
           LoginPage.id: (context) => LoginPage(),
           SplashPage.id: (context) => SplashPage(),
           HomePage.id: (context) => HomePage(),
+          ProfilePage.id: (context) => ProfilePage(),
         },
       ),
     );

@@ -6,9 +6,13 @@ class InputTextField extends StatefulWidget {
   Function(String) validator;
   bool isPasswordField;
   Color color;
+  TextInputType textInputType;
+  bool isDisabled;
   InputTextField(
       {required this.color,
       required this.isPasswordField,
+      this.isDisabled = false,
+      this.textInputType = TextInputType.emailAddress,
       required this.validator,
       required this.textEditingController});
   @override
@@ -27,8 +31,10 @@ class _InputTextFieldState extends State<InputTextField> {
                 validator: widget.validator,
                 textEditingController: widget.textEditingController,
                 color: widget.color,
+                isDisabled: widget.isDisabled,
               )
             : NormalTextFormField(
+                textInputType: widget.textInputType,
                 validator: widget.validator,
                 textEditingController: widget.textEditingController,
               ));
@@ -38,16 +44,19 @@ class _InputTextFieldState extends State<InputTextField> {
 class NormalTextFormField extends StatelessWidget {
   Function(String) validator;
   TextEditingController textEditingController;
+  TextInputType textInputType;
 
   NormalTextFormField(
-      {required this.textEditingController, required this.validator});
+      {required this.textEditingController,
+      required this.textInputType,
+      required this.validator});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textEditingController,
       validator: (value) => validator(value!),
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: textInputType,
       style: TextStyle(
           color: Color(0xff6683AB),
           fontWeight: FontWeight.w500,
@@ -67,11 +76,13 @@ class NormalTextFormField extends StatelessWidget {
 }
 
 class PasswordTextFormField extends StatefulWidget {
+  bool isDisabled;
   Function(String) validator;
   TextEditingController textEditingController;
   Color color;
   PasswordTextFormField(
       {required this.color,
+      this.isDisabled = false,
       required this.textEditingController,
       required this.validator});
   @override
@@ -87,11 +98,12 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
         Container(
           margin: EdgeInsets.only(right: 50),
           child: TextFormField(
+            enabled: !widget.isDisabled,
             validator: (value) => widget.validator(value!),
             controller: widget.textEditingController,
             keyboardType: TextInputType.visiblePassword,
             obscuringCharacter: '*',
-            obscureText: !showPassword,
+            obscureText: widget.isDisabled ? false : !showPassword,
             style: TextStyle(
                 color: Color(0xff6683AB),
                 fontWeight: FontWeight.w500,
@@ -108,33 +120,35 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
             ),
           ),
         ),
-        Container(
-          margin: EdgeInsets.all(10),
-          alignment: Alignment.centerRight,
-          child: InkWell(
-            onTap: () {
-              setState(() {
-                showPassword = !showPassword;
-              });
-            },
-            child: ClayContainer(
-              color: Colors.white,
-              parentColor: widget.color,
-              depth: 2,
-              width: 40,
-              height: 40,
-              borderRadius: 15,
-              child: Center(
-                child: !showPassword
-                    ? Text(
-                        '?',
-                        style: TextStyle(fontSize: 18),
-                      )
-                    : Icon(Icons.remove_red_eye_outlined),
+        widget.isDisabled
+            ? Container()
+            : Container(
+                margin: EdgeInsets.all(10),
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      showPassword = !showPassword;
+                    });
+                  },
+                  child: ClayContainer(
+                    color: Colors.white,
+                    parentColor: widget.color,
+                    depth: 2,
+                    width: 40,
+                    height: 40,
+                    borderRadius: 15,
+                    child: Center(
+                      child: !showPassword
+                          ? Text(
+                              '?',
+                              style: TextStyle(fontSize: 18),
+                            )
+                          : Icon(Icons.remove_red_eye_outlined),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
       ],
     );
   }

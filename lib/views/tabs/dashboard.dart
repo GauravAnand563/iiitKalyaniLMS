@@ -1,3 +1,5 @@
+import 'package:books_finder/books_finder.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +8,9 @@ import 'package:lms/widgets/clayContainerHighlight.dart';
 import 'package:lms/widgets/issuedBookCard.dart';
 import 'package:lms/widgets/shelfBooksCard.dart';
 import 'package:lms/widgets/submitBtn.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import '../../services/search.dart';
 
 class DashBoardTab extends StatefulWidget {
   @override
@@ -36,7 +40,11 @@ class _DashBoardTabState extends State<DashBoardTab> {
                 SizedBox(
                   width: 10,
                 ),
-                ClayContainerHighlight(iconData: CupertinoIcons.search)
+                ClayContainerHighlight(
+                    onTap: () async {
+                      showSearch(context: context, delegate: BookSearch());
+                    },
+                    iconData: CupertinoIcons.search)
               ],
             ),
             SizedBox(

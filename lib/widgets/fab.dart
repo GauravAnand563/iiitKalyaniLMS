@@ -8,6 +8,7 @@ import 'package:flutter_polygon/flutter_polygon.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lms/widgets/clayContainerHighlight.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ActionFab extends StatefulWidget {
   @override
@@ -77,51 +78,46 @@ class _ActionFabState extends State<ActionFab>
 
   Widget qrCodeScanner() {
     return Container(
-      child: InkWell(
-        onTap: () async {
-          print('qr');
-          String cameraScanResult = await scanner.scan();
-          print(cameraScanResult);
-        },
-        child:
-            ClayContainerHighlight(iconData: CupertinoIcons.qrcode_viewfinder),
-      ),
+      child: ClayContainerHighlight(
+          onTap: () async {
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Place QR code within the frame")));
+            String cameraScanResult = await scanner.scan();
+            print(cameraScanResult);
+          },
+          iconData: CupertinoIcons.qrcode_viewfinder),
     );
   }
 
   Widget barCodeScanner() {
     return Container(
-      child: InkWell(
+      child: ClayContainerHighlight(
         onTap: () {
           print('bar');
         },
-        child: ClayContainerHighlight(
-          iconData: CupertinoIcons.barcode_viewfinder,
-        ),
+        iconData: CupertinoIcons.barcode_viewfinder,
       ),
     );
   }
 
   Widget imageScanner() {
     return Container(
-      child: InkWell(
-          onTap: () async {
-            print('image');
-            final pickedFile =
-                await picker.getImage(source: ImageSource.gallery);
-            File _image;
-            if (pickedFile != null) {
-              _image = File(pickedFile.path);
-              Uint8List bytes = _image.readAsBytesSync();
-              String barcode = await scanner.scanBytes(bytes);
-              print(barcode);
-            } else {
-              print('No image selected.');
-            }
-          },
-          child: ClayContainerHighlight(
-            iconData: CupertinoIcons.doc_text_viewfinder,
-          )),
+      child: ClayContainerHighlight(
+        onTap: () async {
+          print('image');
+          final pickedFile = await picker.getImage(source: ImageSource.gallery);
+          File _image;
+          if (pickedFile != null) {
+            _image = File(pickedFile.path);
+            Uint8List bytes = _image.readAsBytesSync();
+            String barcode = await scanner.scanBytes(bytes);
+            print(barcode);
+          } else {
+            print('No image selected.');
+          }
+        },
+        iconData: CupertinoIcons.doc_text_viewfinder,
+      ),
     );
   }
 

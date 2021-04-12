@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
         alignment: Alignment.bottomCenter,
         children: [
           Column(
+            mainAxisSize: MainAxisSize.max,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,

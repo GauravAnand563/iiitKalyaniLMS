@@ -38,7 +38,8 @@ class Auth {
   }
 
   Future<bool> signInGoogle(BuildContext context) async {
-    final GoogleSignIn googleSignIn = GoogleSignIn(scopes: [
+    final GoogleSignIn googleSignIn =
+        GoogleSignIn(hostedDomain: "iiitkayani.ac.in", scopes: [
       'email',
     ]);
 
@@ -72,6 +73,9 @@ class Auth {
             context, 'An error occurred while signing in with Google.', false);
         return false;
       }
+    } else {
+      showSnackBar(context,
+          'Institute google account not linked or login-error!', false);
     }
     return false;
   }
