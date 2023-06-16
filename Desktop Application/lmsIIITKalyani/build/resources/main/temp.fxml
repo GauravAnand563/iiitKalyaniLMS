@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+
+<?import javafx.scene.shape.Line?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+
+<AnchorPane layoutX="174.0" layoutY="75.0" xmlns="http://javafx.com/javafx/"
+            xmlns:fx="http://javafx.com/fxml/"
+            style="-fx-background-color: #F5F6F9; -fx-background-radius: 10;" AnchorPane.bottomAnchor="1.0"
+            AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="75.0" fx:controller="controllers.borrowingController">
+    <children>
+        <Label layoutX="39.0" layoutY="34.0" text="Borrowings">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+        <Label layoutX="45.0" layoutY="94.0" text="Select the year and Registration No. of the student"
+               textFill="#9a9292">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </Label>
+        <ComboBox layoutX="44.0" layoutY="146.0" prefHeight="29.0" prefWidth="155.0" promptText="Year"
+                  style="-fx-border-color: #8c8988; -fx-background-color: #F5F6F9;"/>
+        <ComboBox layoutX="234.0" layoutY="146.0" prefHeight="29.0" prefWidth="179.0" promptText="Registration No"
+                  style="-fx-background-color: #F5F6F9; -fx-border-color: #8c8988;" styleClass="combo-box"/>
+        <Pane layoutX="35.0" layoutY="293.0" prefHeight="66.0" prefWidth="472.0"
+              style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" AnchorPane.leftAnchor="35.0">
+            <children>
+                <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+
+                    </image>
+                </ImageView>
+                <Label layoutX="58.0" layoutY="14.0" text="Compilers: Principles, Techniques, and Tools"
+                       textFill="#41951c">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="58.0" layoutY="34.0" text="Due Date : 25 APR" textFill="#2c2b2b">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="39.0" layoutY="381.0" prefHeight="66.0" prefWidth="472.0"
+              style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" AnchorPane.leftAnchor="39.0">
+            <children>
+                <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+
+                    </image>
+                </ImageView>
+                <Label layoutX="58.0" layoutY="9.0" text="Java: The Complete Reference" textFill="#41951c">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="58.0" layoutY="27.0" text="Due Date : 25 APR" textFill="#2c2b2b">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="557.0" layoutY="46.0" prefHeight="297.0" prefWidth="270.0" style="-fx-background-radius: 20;"
+              styleClass="linear-grad">
+            <children>
+                <Button layoutX="63.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0"
+                        styleClass="button4" text="ADD TO CART" textFill="WHITE"/>
+                <Label layoutX="54.0" layoutY="132.0" text="500 Gold" textFill="WHITE">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="54.0" layoutY="208.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+
+                    </image>
+                </ImageView>
+                <Label layoutX="95.0" layoutY="208.0" text="Jimm Falon" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="97.0" layoutY="225.0" text="1200 Sales" textFill="#b5adad">
+                    <font>
+                        <Font size="11.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Line endX="100.0" layoutX="445.0" layoutY="54.0" startX="100.0" startY="418.0" stroke="#b9b1b1"
+              strokeDashOffset="2.0"/>
+        <Label layoutX="569.0" layoutY="377.0" text="What is wow ">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="675.0" layoutY="377.0" text="Gold?" textFill="#fff600">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <BorderPane layoutX="569.0" layoutY="404.0" prefHeight="66.0" prefWidth="270.0">
+            <top>
+                <Label alignment="CENTER" prefWidth="265.0"
+                       text="Mythic + dangerous 5 player dungeons where you must try to finish the run before a timer runs out. The time is applied to the dungeons you can play in normal/heroic/ mythic diff"
+                       textFill="#9a9292" wrapText="true" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </top>
+        </BorderPane>
+        <Pane layoutX="39.0" layoutY="208.0" prefHeight="66.0" prefWidth="472.0"
+              style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" AnchorPane.leftAnchor="39.0">
+            <children>
+                <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+
+                    </image>
+                </ImageView>
+                <Label layoutX="58.0" layoutY="14.0" text="Introduction to Algorithms" textFill="#41951c">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="58.0" layoutY="34.0" text="Due Date : 25 APR">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+    <styleClass>
+        <String fx:value="navigation-active"/>
+        <String fx:value="navigation-hover"/>
+    </styleClass>
+</AnchorPane>
