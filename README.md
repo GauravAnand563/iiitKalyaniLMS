@@ -22,6 +22,15 @@ The mobile application is designed for students and offers the following feature
 4. **Request Approval and Notification**: Admin approves or rejects the request, and a notification is sent to the student.
 5. **Book Collection**: Present the request verification token to the librarian to collect approved books.
 
+<img src="https://github.com/GauravAnand563/iiitKalyaniLMS/assets/10172216/81d9bafd-9aab-4b2a-9db4-f0857a9842ec" alt="Image 1" style="height: 400px;">
+<img src="https://github.com/GauravAnand563/iiitKalyaniLMS/assets/10172216/e5125b00-cd29-4cd2-b446-2d92c89670f5" alt="Image 2" style="height: 400px;">
+<img src="https://github.com/GauravAnand563/iiitKalyaniLMS/assets/10172216/7c5ac478-5527-45f1-b474-8c6235507e4c" alt="Image 3" style="height: 400px;">
+<img src="https://github.com/GauravAnand563/iiitKalyaniLMS/assets/10172216/9124bceb-dfce-4c80-a1f7-fd51d99c8fc2" alt="Image 4" style="height: 400px;">
+<img src="https://github.com/GauravAnand563/iiitKalyaniLMS/assets/10172216/f5b76016-242c-450e-bc97-3cfccda1ec67" alt="Image 5" style="height: 400px;">
+<img src="https://github.com/GauravAnand563/iiitKalyaniLMS/assets/10172216/33e85c3c-d603-46cb-a81f-49f98ab663a8" alt="Image 6" style="height: 400px;">
+
+
+
 ## Installation and Setup 🔧
 
 To use the IIIT Kalyani Library Management System:
